@@ -2,6 +2,18 @@
     font-family: Roboto, Arial, sans-serif !important;
 }
 
+:root{
+    --titlebar-color-dark: #282828;
+    --guilds-color-dark: #202020;
+    --channel-list-color-dark: #222222;
+    --font-color-dark: #fff;
+    --time-color-dark: #878787;
+    --chat-color-dark: #191919;
+    --channelbtn-color-dark: #4A4A4A;
+    
+    --divider-color-dark: #2B2B2B;
+}
+
 [class*=scroller]::-webkit-scrollbar-thumb, [class*=scroller]::-webkit-scrollbar-track, .scroller-wrap .scroller::-webkit-scrollbar-thumb, .scroller-wrap .scroller::-webkit-scrollbar-track-piece{
     border-radius: 0 !important;
     border: 0 !important;
@@ -30,33 +42,32 @@
     background-color: var(--channelbtn-color-dark);
 }
 
-.private-channels .search-bar, #friends [class*=headerBar], .chat [class*=title], [class*=channels] [class*=header] {
+.private-channels .search-bar, [class*=headerBar], [class*=chat] [class*=title], [class*=channels] [class*=header] {
     height: 56px;
     background-color: var(--titlebar-color-dark) !important;
     box-shadow: inset 0px 0px 8px 0px rgba(17, 17, 17, .06);
 }
 
-.guilds {
+[class^=guilds] {
     padding: 0 0 10px 0 !important;
 }
 
-.guilds-wrapper {
-    background-color: var(--guilds-color-dark);
+[class^=guildsWrapper] {
+    background-color: var(--guilds-color-dark) !important;
 }
 
-.guilds > .guild:first-child {
+[class^=guilds] > [class^=guild]:first-child {
     margin: 0 !important;
     width: 100%;
     height: 56px;
     box-shadow: inset 0px 0px 8px 0px rgba(17, 17, 17, .06);
 }
 
-.friends-icon {
-    padding-top: 5px !important;
-    margin-left: 10px;
+[class^=guilds] svg[name=Discord] {
+    padding: 5px 0 0 0 !important;
 }
 
-.guilds > .guild:first-child .guild-inner {
+[class^=guilds] > [class^=guild]:first-child [class^=guildInner] {
     border-radius: 0 !important;
     height: 56px;
     background-color: var(--titlebar-color-dark) !important;
@@ -68,33 +79,33 @@
     font-size: 14px !important;
 }
 
-.sidebar-region, [class*=channels], [class*=membersWrap] [class*=members], [class*=channels] [class*=scrollerThemed] {
+[class^=sidebarRegion], .sidebar-region, [class*=channels] [class*=container], [class*=membersWrap] [class*=members], [class*=channels] [class*=scrollerThemed] {
     background-color: var(--channel-list-color-dark) !important;
 }
 
-.guilds .dms .guild {
+[class^=guilds] .dms [class^=guild] {
     height: 14px;
     width: 14px;
     margin: 0px 5px !important;
 }
 
-.guilds .dms .guild-inner {
+[class^=guilds] .dms [class^=guildInner] {
     height: 14px;
     width: 14px;
 }
 
-.guilds .dms {
+[class^=guilds] .dms {
     display: flex !important;
     flex-direction: row !important;
 }
 
-.guilds .dms .guild a {
+[class^=guilds] .dms [class^=guild] a {
     height: 14px !important;
     width: 14px !important;
     background-size: 14px !important;
 }
 
-.guilds .dms .badge {
+[class^=guilds] .dms .badge {
     font-size: 8px;
     background-color: transparent;
     padding: 0;
@@ -103,27 +114,27 @@
     right: -2px !important;
 }
 
-.guilds > .guild:first-child .guild-inner a {
+[class^=guilds] > [class^=guild]:first-child [class^=guildInner] a {
     width: 100%;
     height: 100%;
     
 }
 
-.guild {
+[class^=guilds] > [class^=guild] {
     margin-left: 10px !important;
 }
 
-.guild .badge {
+[class^=guild] .badge {
     top: 0px !important;
     right: 0px !important;
     bottom: auto !important;
 }
 
-.friends-online, .guild-separator {
+[class*=friendsOnline], [class*=guildSeparator] {
     display: none;
 }
 
-.channel-name {
+[class^=channel]-name {
     color: var(--font-color-dark) !important;
     opacity: 1 !important;
     margin-right: 24px !important;
@@ -178,41 +189,50 @@
     background-color: transparent !important;
 }
 
-.channel a, [class*=channel] [class*=content] {
+[class^=channel] a, [class*=channel] [class*=content] {
     margin: 0 !important;
     padding: 0px 24px !important;
     background-color: transparent !important;
 }
 
-.channel:hover, .channel.selected, [class*=channel] [class*=containerDefault] [class*=wrapper]:not([class*=flex]):hover, [class*=channel] [class*=wrapperSelectedText] {
+[class*=channel] [class*=containerDefault], [class*=channel] [class*=contentDefaultVoice] {
+    z-index: 2;
+}
+
+[class^=channel]:hover, [class^=channel].selected, [class*=channel] [class*=containerDefault] [class*=wrapper]:not([class*=flex]):hover, [class*=channel] [class*=wrapperSelectedText] {
     background-color: var(--channelbtn-color-dark);
 }
 
-.chat .divider div {
+[class*=chat] .divider div {
     background-color: var(--divider-color-dark) !important;
 }
 
-.chat .divider span {
+[class*=chat] .divider span {
     background-color: var(--divider-color-dark) !important;
     color: #757575 !important;
 }
 
-.chat form [class*=inner] {
+[class*=chat] form [class*=inner] {
     background-color: transparent;
     border-bottom: var(--divider-color-dark) solid 1px;
 }
 
-.chat form {
+[class^=welcomeMessage] {
+    display: none;
+}
+
+[class*=chat] form {
     border-top: none;
 }
 
-.chat form [class*=channelTextArea] {
+[class*=chat] form [class*=channelTextArea] {
+    background-color: var(--chat-color-dark);
     margin: 15px 0 10px;
 }
 form [class*=typing] {
     background-color: transparent !important;
 }
-.content-region, #friends, .friends-table, .chat .content, .chat .messages-wrapper, .chat form {
+.content-region, [class*=activityFeed], #friends, .friends-table, [class*=chat] > [class*=content], [class*=chat] [class*=messagesWrapper], [class*=chat] form {
     background-color: var(--chat-color-dark) !important;
 }
 
