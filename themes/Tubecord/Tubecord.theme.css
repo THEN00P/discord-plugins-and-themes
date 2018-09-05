@@ -1,5 +1,5 @@
 /*//META{"name":"TubeCord", "version":"1.0", "author":"THEN00P", "description":"A theme based on youtubes design"}*/
-@import url("https://cdn.rawgit.com/THEN00P/discord-plugins-and-themes/master/themes/Tubecord/assets/Tubecord.css");
+@import url("https://cdn.rawgit.com/THEN00P/discord-plugins-and-themes/8208baf4/themes/Tubecord/assets/Tubecord.css");
 :root{
     --titlebar-color-dark: #282828;
     --guilds-color-dark: #202020;
