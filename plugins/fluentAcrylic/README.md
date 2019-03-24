@@ -1,0 +1,1 @@
+Adds a native windows 10 acryl backround to discord.
