@@ -39,19 +39,19 @@ class acrylic {
 
             fs.renameSync(path.resolve(bdConfig.dataPath, "acrylic"), path.resolve(bdConfig.dataPath, "acrylic.asar"));
         }
-		
-		if(!window.BdApi.isSettingEnabled("fork-wp-1")) {
-				//enable transparent backgrounds
-				window.settingsPanel.updateSettings("fork-wp-1", true);
 
-				setTimeout(() => {
-					app.relaunch()
-					app.exit()
-				}, 2500);
-			}
+        if(!window.BdApi.isSettingEnabled("fork-wp-1")) {
+	    //enable transparent backgrounds
+            window.settingsPanel.updateSettings("fork-wp-1", true);
+
+            setTimeout(() => {
+                app.relaunch()
+                app.exit()
+            }, 2500);
+        }
 
         //enable acrylic
-        eval('require(require("path").resolve(bdConfig.dataPath, "acrylic.asar")).SetAcrylic(require("electron").remote.getCurrentWindow())');
+        require(require("path").resolve(bdConfig.dataPath, "acrylic.asar")).SetAcrylic(require("electron").remote.getCurrentWindow());
     }
     stop() {
         window.settingsPanel.updateSettings("fork-wp-1", false);
