@@ -51,7 +51,7 @@ class acrylic {
         }
 
         //enable acrylic
-        require(require("path").resolve(bdConfig.dataPath, "acrylic.asar")).SetAcrylic(require("electron").remote.getCurrentWindow());
+        require(path.resolve(bdConfig.dataPath, "acrylic.asar")).SetAcrylic(require("electron").remote.getCurrentWindow());
     }
     stop() {
         window.settingsPanel.updateSettings("fork-wp-1", false);
