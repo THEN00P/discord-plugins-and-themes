@@ -35,7 +35,7 @@ class acrylic {
         //download compiled module
         if(!fs.existsSync(path.resolve(bdConfig.dataPath, "acrylic.asar"))) {
             //doesn't work with ".asar" extentsion
-            await download("https://cdn.jsdelivr.net/gh/THEN00P/discord-plugins-and-themes@00108c4550ccea4d8d5bc8c76570ab30146c1ceb/binaries/acrylic.asar", path.resolve(bdConfig.dataPath, "acrylic"));
+            await download("https://cdn.jsdelivr.net/gh/THEN00P/discord-plugins-and-themes/binaries/acrylic.asar", path.resolve(bdConfig.dataPath, "acrylic"));
 
             fs.renameSync(path.resolve(bdConfig.dataPath, "acrylic"), path.resolve(bdConfig.dataPath, "acrylic.asar"));
         }
